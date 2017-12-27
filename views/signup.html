@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="../css/main.css">
+	<title>Register</title>
+</head>
+<body class="vh100">
+	<main>
+	  <div class="container-flex-column">
+			<div class="container">
+				<div class="row">
+				<div class="col-xs-12">
+				<a href="register.html" class="glyphicon glyphicon-menu-left position-fixed" aria-hidden="true"></a>
+				<div class="text-center">
+				<h3>Sign Up</h3>
+				<p>Join now for free ride credit</p>
+				<hr>
+				</div>
+				
+				<div id="select" class="text-center">
+						<div id="choose-country" class="selector-flag-container"><img class="flag-img flagJustSelected" src="../assets/images/peru.png" alt="flag"><span class="glyphicon glyphicon-triangle-bottom flag"></span></div>
+           <div id="choose-flag" class="flags-options hide">
+            	<div class="flag-container-options" id="colombia">
+            		<img class="flag-img" src="../assets/images/colombia.png" alt="flag-country">
+            	</div>
+            	<div class="flag-container-options" id="peru" >
+            		<img class="flag-img" src="../assets/images/peru.png" alt="flag-country">
+            	</div>
+            	<div class="flag-container-options" id="mexico">
+            		<img class="flag-img" src="../assets/images/mexico.png" alt="flag-country">
+            	</div>
+            	<div class="flag-container-options" id="usa">
+            		<img class="flag-img" src="../assets/images/usa.png" alt="flag-country">
+            	</div>
+            </div>
+            <div class="input-container">
+              <label class="placeholder" for="number">+51</label>
+            	<input id="number" type="text" class="input-number" data-format="+1 (ddd) ddd-dddd">
+            </div>
+            <p class="underInputText">We'll send a text to verify your phone</p>
+            </div>
+            <div class="text-center">
+            	<a href="verify.html"><button id="next-btn" type="button" class="btn lyft-btn" disabled>Next</button></a>
+            </div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</main>
+	<script src="../vendors/jquery/jquery.js"></script>
+	<script src="../js/signup.js"></script>
+</body>
+</html>
