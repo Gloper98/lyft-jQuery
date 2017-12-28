@@ -9,9 +9,11 @@ $(document).ready(function() {
 	var $placeholder=$('.placeholder');
 	var $nextBtn = $('#next-btn');
 	var $numberToSendCode;
-	var $code = Math.floor(Math.random() * ((999-100)+1) + 100);
+	var $code = 'LAB-' + Math.floor(Math.random() * ((999-100)+1) + 100);
 	var $users=[ ];
 	var $country= 'Peru';
+	var $prefix = '+51';
+	var $chooseCountry = $('#choose-country');
 	
 	function hideOptions(){
 		$('#choose-flag').toggleClass('hide');
@@ -19,26 +21,34 @@ $(document).ready(function() {
 	
 	function choosedColombia(){
 		$placeholder.text($colombiaCode);
+		$prefix = $colombiaCode;
 		$('.flagJustSelected').attr('src',$srcImage + 'colombia.png');
 		$country = 'Colombia';
+		$phoneNumber.prop('disabled', false);
 	}
 	
 	function choosedPeru(){
 		$placeholder.text($peruCode);
 		$('.flagJustSelected').attr('src',$srcImage + 'peru.png');
+		$prefix = $peruCode;
 		$country = 'Peru';
+		$phoneNumber.prop('disabled', false);
 	}
 	
 	function choosedMexico(){
 		$placeholder.text($mexicoCode);
+		$prefix = $mexicoCode;
 		$('.flagJustSelected').attr('src',$srcImage + 'mexico.png');
 		$country = 'Mexico';
+		$phoneNumber.prop('disabled', false);
 	}
 	
 	function choosedUSA(){
 		$placeholder.text($usaCode);
+		$prefix = $usaCode;
 		$('.flagJustSelected').attr('src',$srcImage + 'usa.png');
 		$country = 'The United States';
+		$phoneNumber.prop('disabled', false);
 	}
 	
 	function answerValidation() {
@@ -48,13 +58,15 @@ $(document).ready(function() {
 		var $firstnumber = $stringNumber.charAt(0);
 		var $numberOfNumbers = $stringNumber.length === 9;
 		
-		
-		
 		if( $numberOfNumbers && $firstnumber==9 && $stringNumber*0===0) {
 			$nextBtn.prop('disabled', false);
-      $numberToSendCode = $placeholder.text() + $stringNumber;
-		} else {
-			$nextBtn.prop('disabled', true);
+      $numberToSendCode = $prefix + $stringNumber;
+		} else if ($stringNumber.length !== 0) {
+			$chooseCountry.off("click");
+		  $nextBtn.prop('disabled', true);
+		} else if ($stringNumber.length == 0) {
+			$chooseCountry.on("click", hideOptions);
+		  $nextBtn.prop('disabled', true);
 		}
 	};
 	
@@ -64,10 +76,7 @@ $(document).ready(function() {
 		localStorage.setItem('users', JSON.stringify($users));
 	}
 	
-	
-	
-	
-	$('#choose-country').click(hideOptions);
+	$chooseCountry.click(hideOptions);
 	$('.flag-container-options').click(hideOptions);
 	$('#colombia').click(choosedColombia);
 	$('#peru').click(choosedPeru);
@@ -76,6 +85,4 @@ $(document).ready(function() {
 	$phoneNumber.on('input', answerValidation);
 	$nextBtn.click(saveCode);
 									
-		
-
 })

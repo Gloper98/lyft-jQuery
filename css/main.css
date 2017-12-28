@@ -86,3 +86,61 @@ a {
 	padding: 2.5vh 30vw;
 	color: #333;
 }
+.resend-btn {
+	padding: 2vh 15vw;
+}
+.input-code {
+	outline: none;
+	border: none;
+	border-bottom: 2px dotted rgb(244, 85, 242);
+	width: 28vw;
+	letter-spacing: 6vw;
+	font-size: 16px;
+	padding-left: 3vw;
+}
+.underCodeText {
+	margin: 6vh 0;
+}
+.formulary-btn {
+	margin: 24vh 0 0 0;
+	padding: 2.5vh 30vw;
+}
+#firstNameInput, #lastNameInput {
+	width: 50%;
+}
+.btn-done {
+	background-color: #DFDFDF;
+	color: #333;
+	text-decoration: none;
+	margin: 24vh 0 0 0;
+	padding: 2.5vh 30vw;
+}
+#agree {
+	margin-left: 3vw;
+}
+.load-logo-beyonce {
+	width: 100%;
+	height: 50vh;
+	background-image: url('../assets/images/loading-beyonce.gif');
+	background-size: cover;
+	background-position: center;
+}
+.final-gif{
+	margin-top:12vh;
+	margin-bottom: 5vh;
+}
+.welcome {
+	color: #fff;
+}
+.check-div {
+	width: 70vw;
+	height: 40vh;
+	border-radius: 1em;
+	position: fixed;
+	z-index: -1;
+	margin-left: 10vw;
+	margin-top: 50vh;
+	background-image: url('../assets/images/check.gif');
+	background-size:auto;
+	background-position: center;
+}
