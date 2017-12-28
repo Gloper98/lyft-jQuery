@@ -10,10 +10,10 @@ $(document).ready(function() {
 	var $nextBtn = $('#next-btn');
 	var $numberToSendCode;
 	var $code = 'LAB-' + Math.floor(Math.random() * ((999-100)+1) + 100);
-	var $users=[ ];
 	var $country= 'Peru';
 	var $prefix = '+51';
 	var $chooseCountry = $('#choose-country');
+	var $information = JSON.parse(localStorage.getItem('users'));
 	
 	function hideOptions(){
 		$('#choose-flag').toggleClass('hide');
@@ -72,8 +72,8 @@ $(document).ready(function() {
 	
 	function saveCode() {
 		alert($code);
-		$users.push({country: $country, code:$code, phone: $numberToSendCode, firstName: ' ', lastName: ' ', email: ' '});
-		localStorage.setItem('users', JSON.stringify($users));
+		$information.unshift({country: $country, code:$code, phone: $numberToSendCode, firstName: ' ', lastName: ' ', email: ' '});
+		localStorage.setItem('users', JSON.stringify($information));
 	}
 	
 	$chooseCountry.click(hideOptions);
