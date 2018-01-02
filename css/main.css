@@ -36,9 +36,6 @@ a {
 	color:#fff;
 	margin-bottom: 6vh;
 }
-#select {
-	outline: 1px solid red;
-}
 .flag-img {
 	width: 15vw;
 }
@@ -75,7 +72,6 @@ a {
 }
 .flags-options {
 	position: fixed;
-	outline: 1px solid blue;
 	display: inline-block;
 	margin-left: 1vw;
 	background-color: #fff;

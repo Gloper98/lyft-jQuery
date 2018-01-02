@@ -83,6 +83,5 @@ $(document).ready(function() {
 	$('#mexico').click(choosedMexico);
 	$('#usa').click(choosedUSA);
 	$phoneNumber.on('input', answerValidation);
-	$nextBtn.click(saveCode);
-									
+	$nextBtn.click(saveCode);	
 })

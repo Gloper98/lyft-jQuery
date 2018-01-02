@@ -29,5 +29,4 @@ $(document).ready(function(){
 	$inputCode.on('input', btnFunctionality);
 	$resendBtn.click(gettingNewCode);
 	$placeholderCountryCode.text($countryCode);
-	
 })
